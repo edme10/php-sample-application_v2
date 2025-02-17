@@ -8,7 +8,7 @@ services:
       - db
 
   db:
-    image: edem1089/mariadb-sample:latest
+    image: edme1089/mariadb-sample:latest
     container_name: mariadb_container
     environment:
       MYSQL_ROOT_PASSWORD: root
