@@ -1,0 +1,29 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  php-app:
+    build: ./php-app
+    container_name: php_app_container
+    ports:
+      - "8080:80"
+    volumes:
+      - ./php-app:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    build: ./sql
+    container_name: mariadb_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sampleuser
+      MYSQL_PASSWORD: samplepass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

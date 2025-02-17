@@ -1,0 +1,6 @@
+{
+    "require": {
+        "willdurand/negotiation": "^3.1",
+        "twbs/bootstrap": "^3.3"
+    }
+}
